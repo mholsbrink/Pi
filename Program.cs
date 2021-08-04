@@ -27,7 +27,6 @@ namespace Pi
             while (diff >= 0.000001m);
 
             Console.WriteLine($"{approximationOfPi:N5}; {Math.PI:N5}");
-
         }
     }
 }
