@@ -4,7 +4,7 @@ namespace Pi
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             const int constant = 4;
 
