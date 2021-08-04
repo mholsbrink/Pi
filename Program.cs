@@ -21,6 +21,7 @@ namespace Pi
                 approximationOfPi += constant / divider * (sign *= -1);
                 divider += 2;
                 diff = Math.Abs(lastApproximationOfPi - approximationOfPi);
+
                 Console.WriteLine(diff);
             }
             while (diff >= 0.000001m);
