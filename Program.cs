@@ -9,27 +9,28 @@ namespace Pi
     {
         static void Main()
         {
-            const int constant = 4;
+            const int precision = 5;
 
-            var approximationOfPi = 0m;
-            var sign = -1;
-            var divider = 1m;
-
-            decimal diff;
-            decimal lastApproximationOfPi;
+            double pPower = Math.Pow(10, precision);
+            double constant = 4 * pPower * pPower;
+            double approximationOfPi = 0;
+            double sign = -1;
+            double divider = 1;
+            double diff;
+            double lastApproximationOfPi;
 
             do
             {
                 lastApproximationOfPi = approximationOfPi;
-                approximationOfPi += constant / divider * (sign *= -1);
+                approximationOfPi += (constant / divider * (sign *= -1));
                 divider += 2;
                 diff = Math.Abs(lastApproximationOfPi - approximationOfPi);
 
                 Console.WriteLine(diff);
             }
-            while (diff >= 0.000001m);
-
-            Console.WriteLine($"{approximationOfPi:N5}; {Math.PI:N5}");
+            while (diff >= pPower);             
+            
+            Console.WriteLine($"{approximationOfPi/(pPower * pPower):N5}; {Math.PI:N5}");
         }
     }
 }
